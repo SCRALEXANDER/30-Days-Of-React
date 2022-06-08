@@ -2,8 +2,10 @@ draft.md
 react-for-everyone.md
 component.md
 draft
-
-
+package.json
+package-lock.json
+node_modules
+test
 
 
 .vscode/settings.json

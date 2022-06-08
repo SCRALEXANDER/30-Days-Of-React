@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days Of React Challenge</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: lightgray;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .title {
+        margin-top: 20px;
+        align-self: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .imgContainer {
+        display: flex;
+        margin-top: 20px;
+      }
+
+      .images {
+        flex: 1;
+        width: 100%;
+        padding: 0 50px;
+      }
+
+      .footer {
+        height: 300px;
+        margin-top: 30px;
+        background-color: lightblue;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      #subscribeTitle {
+        margin-top: 30px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 200;
+      }
+
+      #subscribeDesc {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      .inputWrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 80%;
+      }
+
+      .inputWrapper input {
+        height: 40px;
+        width: 200px;
+        border-radius: 5px;
+        margin-right: 10px;
+        border: none;
+        padding: 15px;
+      }
+
+      input::placeholder {
+        color: gray;
+      }
+
+      input[type='submit'] {
+        position: relative;
+        left: 190px;
+        top: 15px;
+        width: 250px;
+        background-color: tomato;
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 700;
+      }
+
+      .userCardWrapper {
+        background-color: white;
+        width: 98%;
+        margin: 5px auto;
+        border-radius: 5px;
+        padding: 20px;
+      }
+
+      .userCard {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .profileName {
+        margin-top: 20px;
+        margin-bottom: 35px;
+        font-size: 18px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif,
+          Geneva, Tahoma, sans-serif, 'Lucida Sans Unicode', 'Lucida Grande',
+          'Lucida Sans', Arial, sans-serif;
+        text-transform: uppercase;
+      }
+
+      .profileDescription {
+        font-size: 14px;
+        font-family: sans-serif;
+        color: gray;
+        margin-bottom: 35px;
+      }
+
+      .imgProfileContainer img {
+        border-radius: 50%;
+        width: 15%;
+      }
+
+      .skillTitle {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif,
+          Geneva, Tahoma, sans-serif, 'Lucida Sans Unicode', 'Lucida Grande',
+          'Lucida Sans', Arial, sans-serif;
+        text-transform: uppercase;
+      }
+
+      .skillBundle {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skillBundle span {
+        flex: 0;
+        width: 100%;
+        height: fit-content;
+        display: inline-block;
+        white-space: nowrap;
+        padding: 8px;
+        border-radius: 5px;
+        background-color: lightseagreen;
+        color: white;
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      }
+
+      .joinDate {
+        margin-top: 30px;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+      integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="text/babel">
+      const rootElement = document.querySelector('.root');
+
+      const html = '../03_setting_up_boilerplate/src/images/html_logo.png';
+      const css = '../03_setting_up_boilerplate/src/images/css_logo.png';
+      const js = '../03_setting_up_boilerplate/src/images/js_logo.png';
+      const react = '../03_setting_up_boilerplate/src/images/react_logo.png';
+      const profileImg = '../03_setting_up_boilerplate/src/images/asabeneh.jpg';
+
+      const container = (
+        <main>
+          <div className="wrapper">
+            <div className="title">
+              <h5>Front End Technologies</h5>
+            </div>
+            <div className="imgContainer">
+              <img src={html} alt="html logo" className="images" />
+              <img src={css} alt="css logo" className="images" />
+              <img src={js} alt="js logo" className="images" />
+              <img src={react} alt="react logo" className="images" />
+            </div>
+          </div>
+        </main>
+      );
+
+      const footer = (
+        <footer>
+          <div className="wrapper footer">
+            <h1 id="subscribeTitle">SUBSCRIBE</h1>
+            <p id="subscribeDesc">
+              Sign up with you email address to receive news and updates.
+            </p>
+
+            <div className="inputWrapper">
+              <form action="./" method="post">
+                <label for="firstName">
+                  <input
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    placeholder="First name"
+                  />
+                </label>
+                <label for="lastName">
+                  <input
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    placeholder="Last name"
+                  />
+                </label>
+                <label for="email">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </label>
+                <label for="submit">
+                  <input type="submit" value="Subscribe" />
+                </label>
+              </form>
+            </div>
+          </div>
+        </footer>
+      );
+
+      const header = (
+        <header>
+          <div className="userCardWrapper">
+            <div className="userCard">
+              <div className="imgProfileContainer">
+                <img src={profileImg} alt="profile Image" />
+              </div>
+              <h1 className="profileName">ASABENEH YETAYEH</h1>
+              <p className="profileDescription">Senior Developer, Finland</p>
+              <div className="skillContainer">
+                <h2 className="skillTitle">SKILLS</h2>
+                <div className="skillBundle">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>Sass</span>
+                  <span>JS</span>
+                  <span>React</span>
+                  <span>Redux</span>
+                  <span>Node</span>
+                  <span>MongoDB</span>
+                  <span>Python</span>
+                  <span>Flask</span>
+                  <span>Django</span>
+                  <span>NumPy</span>
+                  <span>Pandas</span>
+                  <span>Data Analysis</span>
+                  <span>MYSQL</span>
+                  <span>GraphQL</span>
+                  <span>D3.js</span>
+                  <span>Gatsby</span>
+                  <span>Docker</span>
+                  <span>Heroku</span>
+                  <span>Git</span>
+                </div>
+              </div>
+              <p className="joinDate">Joined on Aug 30, 2020</p>
+            </div>
+          </div>
+        </header>
+      );
+
+      const app = (
+        <div>
+          {header}
+          {container}
+          {footer}
+        </div>
+      );
+      ReactDOM.render(app, rootElement);
+    </script>
+  </body>
+</html>
